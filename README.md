@@ -28,18 +28,25 @@ git-versioned Markdown you can read and own — not a black-box vector database.
 | Consolidation | `/ncl-sync` — turning a session into long-term neurons |
 | Senses | adapters that perceive your repos, accounts and connectors |
 
+## Requirements
+- **Claude Code** (the statusline, hooks and skills are Claude Code features).
+- **macOS or Linux** with `bash`, `git` and `python3`. The multi-account helper uses the macOS
+  Keychain model; the rest is cross-platform.
+
 ## Install & first run
 ```bash
 git clone https://github.com/felipeubidots/neurocorelab.git ~/neurocorelab
 cd ~/neurocorelab
 ```
-Open the folder with your AI agent and run the onboarding:
+Open the folder with Claude Code. On first open you'll be asked to **trust the folder** — say
+yes, so the `SessionStart`/`PostToolUse` hooks and the statusline activate. Then run:
 ```
 /ncl-init
 ```
 It interviews you (**in English or Spanish — your choice at this step**) and configures —
 immediately — everything the author once built by hand: identity, repo map, accounts,
-connectors. On every later session, a hook reminds you if setup is still pending.
+connectors. On every later session, a hook reminds you if setup is still pending, and the
+`CLAUDE.md` at the repo root loads your cortex (`INDEX.md`) into the session automatically.
 
 > The repo itself is English-only. The *only* bilingual moment is this onboarding, where you
 > pick the language the agent talks to you in.
