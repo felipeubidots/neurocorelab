@@ -56,6 +56,8 @@ with the user's answers. Leave a field blank/"—" rather than guessing.
 ## 5. Confirm & teach
 Show a summary of what was written (files + one line each). Then point the user to:
 - `/ncl-init` again to reconfigure.
+- **`/ncl-accounts`** if they use (or want) 2+ Claude Code accounts on one machine — isolated
+  credentials + shared context, no daily `/login` (see `docs/multi-account.md`).
 - `docs/neuron-schema.md` to understand how to add neurons (decisions, projects).
 - `templates/` for decision/project/neuron starters.
 

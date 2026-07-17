@@ -1,12 +1,8 @@
-# The Neuron — schema / El esquema de la neurona
+# The Neuron — schema
 
-> The neuron is NeuroCoreLab's core primitive and its de-facto **API**: every unit of
-> knowledge is one small Markdown file with typed frontmatter. Keep them atomic (one fact,
-> one decision, one project per file) so they can be linked and recalled precisely.
->
-> La neurona es la primitiva central de NeuroCoreLab y su **API** de hecho: cada unidad de
-> conocimiento es un archivo Markdown pequeño con frontmatter tipado. Mantenlas atómicas
-> (un hecho, una decisión, un proyecto por archivo) para poder enlazarlas y recuperarlas.
+> The neuron is NeuroCoreLab's core primitive and its de-facto **API**: every unit of knowledge
+> is one small Markdown file with typed frontmatter. Keep them atomic (one fact, one decision,
+> one project per file) so they can be linked and recalled precisely.
 
 ## Frontmatter
 ```markdown
@@ -21,8 +17,8 @@ links: [other-neuron-name, ...]         # optional; synapses
 <body — the knowledge itself. Link related neurons inline with [[their-name]].>
 ```
 
-## Types / Tipos
-| type | What it holds / Qué guarda |
+## Types
+| type | What it holds |
 |---|---|
 | `identity` | Who the user is: name, role, how they work. **User-provided (never shipped).** |
 | `config`   | Environment facts: repo roots, accounts, connectors, terminal. |
@@ -32,17 +28,18 @@ links: [other-neuron-name, ...]         # optional; synapses
 | `skill`    | A repeatable procedure the agent runs (`ncl-*`). |
 | `memory`   | A durable fact/preference surfaced across sessions. |
 
-## Synapses / Sinapsis
+## Synapses
 - `[[neuron-name]]` links neurons. A link to a not-yet-written neuron is fine — it marks
   something worth writing later.
 - **External pointer:** a `project` neuron may be a *stub* whose body points at another repo
   (local path + remote URL + one-paragraph context). The brain "knows" the project without
   hosting its (possibly confidential/heavy) content.
 
-## Cortex / Córtex
-`INDEX.md` is working memory: it loads into every session, so keep it **light** — pointers
-and the latest decisions, not full content. Detail lives in the neuron files it points to.
+## Cortex
+`INDEX.md` is working memory: it loads into every session, so keep it **light** — pointers and
+the latest decisions, not full content. Detail lives in the neuron files it points to.
 
-## Consolidation / Consolidación
-Turning a session into long-term neurons (the sync ritual) is like sleep fixing memory:
-capture decisions as `decision` neurons, update `config`/`project`, keep the cortex trimmed.
+## Consolidation
+Turning a session into long-term neurons (`/ncl-sync`) is like sleep fixing memory: capture
+decisions as `decision` neurons, update `config`/`project`, keep the cortex trimmed, and stamp
+which account did the work so accounts can see each other's contributions.

@@ -1,41 +1,34 @@
-<!--
-  NeuroCoreLab — README (bilingual EN / ES)
-  English first, Español abajo.
--->
-
 # 🧪 NeuroCoreLab
 
-> A portable, model-agnostic **"second brain" for AI coding agents** — your identity,
-> repos, decisions and projects, loaded into every session. Install it, answer a short
-> setup interview, and your agent starts every session already knowing your context.
+> A portable, model-agnostic **"second brain" for AI coding agents** — your identity, repos,
+> decisions and projects, loaded into every session. Install it, answer a short setup
+> interview (in English or Spanish), and your agent starts every session already knowing your
+> context.
 
 **NeuroCoreLab is the shareable, work-focused edition** of a personal knowledge system
-("NeuroCore"). It ships *empty but structured* — a brain with the neurons wired, waiting
-for you to fill them. Nothing about the original author is baked in.
+("NeuroCore"). It ships *empty but structured* — a brain with the neurons wired, waiting for
+you to fill them. Nothing about the original author is baked in.
 
----
-
-## English
-
-### What it is
+## What it is
 A file-based context layer for AI agents (Claude Code and others). Everything is plain,
 git-versioned Markdown you can read and own — not a black-box vector database.
 
 - **Agnostic to you** — you configure your own identity, repos, accounts and connectors.
-- **Agnostic to your machine** — point it at any directories.
+- **Agnostic to your machine & terminal** — point it at any directories; the statusline renders
+  inside Claude Code (any terminal) and degrades color gracefully.
 - **Agnostic to the model** — it's just files an agent reads.
 
-### The brain, made literal
+## The brain, made literal
 | Cognitive part | In NeuroCoreLab |
 |---|---|
 | Neuron | an atomic `.md` note with typed frontmatter (`type`, `name`, `description`, links) |
 | Synapse | `[[links]]` between neurons + pointers to external repos/projects |
 | Working memory (cortex) | `INDEX.md` — lightweight, loaded into every session |
 | Reflexes | skills (`ncl-*`) the agent can run |
-| Consolidation | the sync ritual — turning a session into long-term neurons |
+| Consolidation | `/ncl-sync` — turning a session into long-term neurons |
 | Senses | adapters that perceive your repos, accounts and connectors |
 
-### Install & first run
+## Install & first run
 ```bash
 git clone https://github.com/felipeubidots/neurocorelab.git ~/neurocorelab
 cd ~/neurocorelab
@@ -44,80 +37,57 @@ Open the folder with your AI agent and run the onboarding:
 ```
 /ncl-init
 ```
-It interviews you (in English or Spanish) and configures — **immediately** — everything
-the author built up by hand: identity, repo map, accounts, connectors. On every later
-session, a hook reminds you if setup is still pending.
+It interviews you (**in English or Spanish — your choice at this step**) and configures —
+immediately — everything the author once built by hand: identity, repo map, accounts,
+connectors. On every later session, a hook reminds you if setup is still pending.
 
-### Live status (brain + statusline)
-Set up automatically on init (Claude Code): the status bar shows the brain and **where it's
-actually working** — the live repo and branch of the file the agent is touching, not the
-static launch directory. A `PostToolUse` hook tracks the real work dir; the statusline
-follows it. `🧠 <you> · 📂 <repo> (<branch>)`.
+> The repo itself is English-only. The *only* bilingual moment is this onboarding, where you
+> pick the language the agent talks to you in.
 
-### Layout
+## Skills — operate at full power
+| Skill | What it does |
+|---|---|
+| `/ncl-init` | Onboarding — configures your instance (identity, repos, accounts, connectors). |
+| `/ncl-accounts` | Set up 2+ Claude Code accounts on one machine (isolated creds, shared context). |
+| `/ncl-sync` | Consolidate the session into the brain (decisions, cortex), stamped by account. |
+| `/ncl-recall` | Answer from the brain before re-contextualizing (read-only). |
+| `/ncl-handoff` | Cross-account bridge — queue/execute tasks between accounts. |
+
+Full catalog and how accounts "talk" (the neural connection): **`docs/skills.md`**.
+
+## Live status (brain + statusline)
+Set up automatically on init (Claude Code): the status bar shows the brain, the **active
+account**, and **where it's actually working** — the live repo and branch of the file the
+agent is touching, not the static launch directory. A `PostToolUse` hook tracks the real work
+dir; the statusline follows it. Terminal-agnostic (truecolor → 256-color → none).
+```
+🧠 <you> · <account> · 📂 <repo> (<branch>)
+```
+
+## Multiple Claude accounts, no daily /login
+Run 2+ Claude Code accounts on one machine the way that actually works: **isolate credentials
+per account, share setup via symlink** (the fix for Claude Code bug #37512). `/ncl-accounts`
+sets it up fast; full guide in **`docs/multi-account.md`**. All accounts share this one brain,
+so they see each other's work (`/ncl-sync`, `/ncl-handoff`).
+
+## Layout
 ```
 INDEX.template.md      → your cortex (copied to INDEX.md on init)
 config/*.template.md   → identity, repos, accounts, connectors (filled on init)
-docs/neuron-schema.md  → the neuron spec (the product's "API")
+docs/                  → neuron-schema (the product's "API"), multi-account, skills
 templates/             → neuron / decision / project templates
 .claude/skills/ncl-*   → onboarding and brain skills
 .claude/settings.json  → SessionStart + statusLine + PostToolUse (brain-aware status)
-bin/                   → scaffolding, repo-map refresh, statusline + workdir tracker
-decisions/ projects/ proposals/ memory/ → where your neurons live
+bin/                   → scaffolding, repo-map refresh, statusline, workdir tracker, account tools
+decisions/ projects/ proposals/ memory/ handoffs/ → where your neurons live
 ```
 
-### Relationship to NeuroCore (global)
-NeuroCoreLab is the **work lab**: lighter, distributable, for colleagues. A fuller
-personal edition ("NeuroCore global") is where broader life-management learnings mature.
-Learnings flow Lab → global; the distributable stays lean.
+## Relationship to NeuroCore (global)
+NeuroCoreLab is the **work lab**: lighter, distributable, for colleagues. A fuller personal
+edition ("NeuroCore global") is where broader life-management learnings mature. Learnings flow
+Lab → global; the distributable stays lean.
 
 ---
 
-## Español
-
-### Qué es
-Una capa de contexto basada en archivos para agentes de IA (Claude Code y otros). Todo es
-Markdown plano, versionado en git, que puedes leer y poseer — no una base vectorial caja-negra.
-
-- **Agnóstico a ti** — configuras tu propia identidad, repos, cuentas y conectores.
-- **Agnóstico a tu máquina** — apúntalo a cualquier carpeta.
-- **Agnóstico al modelo** — son solo archivos que un agente lee.
-
-### El cerebro, hecho literal
-| Parte cognitiva | En NeuroCoreLab |
-|---|---|
-| Neurona | una nota `.md` atómica con frontmatter tipado (`type`, `name`, `description`, enlaces) |
-| Sinapsis | `[[enlaces]]` entre neuronas + punteros a repos/proyectos externos |
-| Memoria de trabajo (córtex) | `INDEX.md` — ligero, cargado en cada sesión |
-| Reflejos | skills (`ncl-*`) que el agente ejecuta |
-| Consolidación | el ritual de sync — convertir una sesión en neuronas de largo plazo |
-| Sentidos | adaptadores que perciben tus repos, cuentas y conectores |
-
-### Instalar y primer arranque
-```bash
-git clone https://github.com/felipeubidots/neurocorelab.git ~/neurocorelab
-cd ~/neurocorelab
-```
-Abre la carpeta con tu agente de IA y corre el onboarding:
-```
-/ncl-init
-```
-Te entrevista (en inglés o español) y configura — **de inmediato** — todo lo que el autor
-armó a mano: identidad, mapa de repos, cuentas, conectores. En cada sesión posterior, un
-hook te recuerda si la configuración sigue pendiente.
-
-### Estado en vivo (cerebro + statusline)
-Se configura solo al instalar (Claude Code): la barra de estado muestra el cerebro y **dónde
-está trabajando de verdad** — el repo y la rama vivos del archivo que el agente está tocando,
-no el directorio estático de arranque. Un hook `PostToolUse` rastrea el work dir real y el
-statusline lo sigue. `🧠 <tú> · 📂 <repo> (<rama>)`.
-
-### Relación con NeuroCore (global)
-NeuroCoreLab es el **laboratorio de trabajo**: más liviano, distribuible, para compañeros.
-Una edición personal más completa ("NeuroCore global") es donde maduran los aprendizajes
-de autogestión de vida. El aprendizaje fluye Lab → global; lo distribuible se mantiene liviano.
-
----
-
-_Licencia y distribución: por definir. NeuroCoreLab no incluye datos de ningún usuario;
-cada instancia es privada de quien la configura._
+_License & distribution: TBD. NeuroCoreLab ships no user data; each instance is private to
+whoever configures it._
