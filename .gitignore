@@ -1,0 +1,30 @@
+# ── NeuroCoreLab: the ENGINE ships without any instance data ──
+# When someone runs /ncl-init these get created and MUST stay private to their machine.
+# The distributable repo tracks only *.template.md and the engine.
+
+# Filled instance config (created from config/*.template.md)
+config/*.md
+!config/*.template.md
+
+# Filled cortex (created from INDEX.template.md)
+/INDEX.md
+
+# The user's own neurons (their private knowledge)
+decisiones/*.md
+proyectos/**
+propuestas/*.md
+memoria/*.md
+!**/.gitkeep
+
+# Secrets & tokens — never here
+secrets/
+*.env
+*.token
+
+# Session log (regenerated) and tool noise
+log/*.jsonl
+.playwright-mcp/
+*.pdf
+
+# macOS
+.DS_Store
