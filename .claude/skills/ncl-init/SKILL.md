@@ -42,9 +42,16 @@ with the user's answers. Leave a field blank/"—" rather than guessing.
 
 ## 4. Wire the senses
 - Run `bash bin/ncl-refresh.sh` to build the initial repo map into `config/repos.md` / INDEX.
-- Confirm the SessionStart hook in `.claude/settings.json` is active (it reminds future
-  sessions if setup is incomplete). If the agent isn't Claude Code, tell the user to load
-  `INDEX.md` at session start however their tool supports it.
+- `.claude/settings.json` ships pre-wired (Claude Code) — confirm it's active:
+  - **SessionStart** → reminds future sessions if setup is incomplete.
+  - **statusLine** → `bin/ncl-statusline.sh`: shows the brain + the live repo/branch it's
+    working in.
+  - **PostToolUse** → `bin/ncl-track-workdir.sh`: tracks where the brain actually works so
+    the statusline follows the real repo, not the static launch cwd. **This brain + statusline
+    combo is a core part of the value** — it ships on by default.
+  Make the scripts executable if needed: `chmod +x bin/*.sh`. If the agent isn't Claude Code,
+  tell the user to load `INDEX.md` at session start however their tool supports it (the
+  statusline/hooks are Claude Code specific).
 
 ## 5. Confirm & teach
 Show a summary of what was written (files + one line each). Then point the user to:

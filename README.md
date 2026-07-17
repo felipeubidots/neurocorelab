@@ -48,6 +48,12 @@ It interviews you (in English or Spanish) and configures — **immediately** —
 the author built up by hand: identity, repo map, accounts, connectors. On every later
 session, a hook reminds you if setup is still pending.
 
+### Live status (brain + statusline)
+Set up automatically on init (Claude Code): the status bar shows the brain and **where it's
+actually working** — the live repo and branch of the file the agent is touching, not the
+static launch directory. A `PostToolUse` hook tracks the real work dir; the statusline
+follows it. `🧠 <you> · 📂 <repo> (<branch>)`.
+
 ### Layout
 ```
 INDEX.template.md      → your cortex (copied to INDEX.md on init)
@@ -55,7 +61,8 @@ config/*.template.md   → identity, repos, accounts, connectors (filled on init
 docs/neuron-schema.md  → the neuron spec (the product's "API")
 templates/             → neuron / decision / project templates
 .claude/skills/ncl-*   → onboarding and brain skills
-bin/                   → scaffolding + repo-map refresh (agnostic)
+.claude/settings.json  → SessionStart + statusLine + PostToolUse (brain-aware status)
+bin/                   → scaffolding, repo-map refresh, statusline + workdir tracker
 decisions/ projects/ proposals/ memory/ → where your neurons live
 ```
 
@@ -98,6 +105,12 @@ Abre la carpeta con tu agente de IA y corre el onboarding:
 Te entrevista (en inglés o español) y configura — **de inmediato** — todo lo que el autor
 armó a mano: identidad, mapa de repos, cuentas, conectores. En cada sesión posterior, un
 hook te recuerda si la configuración sigue pendiente.
+
+### Estado en vivo (cerebro + statusline)
+Se configura solo al instalar (Claude Code): la barra de estado muestra el cerebro y **dónde
+está trabajando de verdad** — el repo y la rama vivos del archivo que el agente está tocando,
+no el directorio estático de arranque. Un hook `PostToolUse` rastrea el work dir real y el
+statusline lo sigue. `🧠 <tú> · 📂 <repo> (<rama>)`.
 
 ### Relación con NeuroCore (global)
 NeuroCoreLab es el **laboratorio de trabajo**: más liviano, distribuible, para compañeros.
