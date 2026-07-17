@@ -35,7 +35,7 @@ git-versioned Markdown you can read and own — not a black-box vector database.
 
 ## Install & first run
 ```bash
-git clone https://github.com/felipeubidots/neurocorelab.git ~/neurocorelab
+git clone https://github.com/ftg-felipe/neurocorelab.git ~/neurocorelab
 cd ~/neurocorelab
 ```
 Open the folder with Claude Code. On first open you'll be asked to **trust the folder** — say
