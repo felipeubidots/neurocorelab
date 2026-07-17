@@ -84,10 +84,10 @@ bin/                   → scaffolding, repo-map refresh, statusline, workdir tr
 decisions/ projects/ proposals/ memory/ handoffs/ → where your neurons live
 ```
 
-## Relationship to NeuroCore (global)
+## Relationship to NeuroCoreEngine
 NeuroCoreLab is the **work lab**: lighter, distributable, for colleagues. A fuller personal
-edition ("NeuroCore global") is where broader life-management learnings mature. Learnings flow
-Lab → global; the distributable stays lean.
+edition (**NeuroCoreEngine**) is where broader life-management learnings mature. Learnings flow
+Lab → Engine; the distributable stays lean.
 
 ---
 
