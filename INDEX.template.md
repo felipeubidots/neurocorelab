@@ -13,7 +13,7 @@ detail, and the latest decisions. **Keep it light.**
 ## How to use / Cómo usar
 - Quick context is already loaded here; open the pointed file for detail.
 - Update the repo map: `bin/ncl-refresh.sh`.
-- Record a decision: create `decisiones/AAAA-MM-tema.md` (see `templates/decision.template.md`).
+- Record a decision: create `decisions/YYYY-MM-topic.md` (see `templates/decision.template.md`).
 - Onboarding / reconfigure: run `/ncl-init`.
 
 ## Where things live / Dónde está cada cosa
@@ -23,16 +23,16 @@ detail, and the latest decisions. **Keep it light.**
 | Repo map | `config/repos.md` · regenerate with `bin/ncl-refresh.sh` |
 | AI accounts / workspaces | `config/accounts.md` |
 | Connectors (MCP) | `config/connectors.md` |
-| A decision / learning | `decisiones/` |
-| A project (internal or external pointer) | `proyectos/<name>/README.md` |
-| Proposals under review | `propuestas/<topic>.md` |
+| A decision / learning | `decisions/` |
+| A project (internal or external pointer) | `projects/<name>/README.md` |
+| Proposals under review | `proposals/<topic>.md` |
 | The neuron spec (product API) | `docs/neuron-schema.md` |
 
 ## Repos
 _Filled by `bin/ncl-refresh.sh` after init._
 
 ## Proyectos activos / Active projects
-_None yet — create one under `proyectos/`._
+_None yet — create one under `projects/`._
 
 ## Últimas decisiones / Latest decisions
 _None yet — the most recent goes on top._

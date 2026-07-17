@@ -56,7 +56,7 @@ docs/neuron-schema.md  → the neuron spec (the product's "API")
 templates/             → neuron / decision / project templates
 .claude/skills/ncl-*   → onboarding and brain skills
 bin/                   → scaffolding + repo-map refresh (agnostic)
-decisiones/ proyectos/ propuestas/ memoria/ → where your neurons live
+decisions/ projects/ proposals/ memory/ → where your neurons live
 ```
 
 ### Relationship to NeuroCore (global)

@@ -10,10 +10,10 @@ config/*.md
 /INDEX.md
 
 # The user's own neurons (their private knowledge)
-decisiones/*.md
-proyectos/**
-propuestas/*.md
-memoria/*.md
+decisions/*.md
+projects/**
+proposals/*.md
+memory/*.md
 !**/.gitkeep
 
 # Secrets & tokens — never here
