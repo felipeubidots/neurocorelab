@@ -55,6 +55,7 @@ connectors. On every later session, a hook reminds you if setup is still pending
 | Skill | What it does |
 |---|---|
 | `/ncl-init` | Onboarding — configures your instance (identity, repos, accounts, connectors). |
+| `/ncl-flow` | Start a focused session on a topic — loads all context, plans around the active account's capabilities, pre-wires handoffs. |
 | `/ncl-accounts` | Set up 2+ Claude Code accounts on one machine (isolated creds, shared context). |
 | `/ncl-sync` | Consolidate the session into the brain (decisions, cortex), stamped by account. |
 | `/ncl-recall` | Answer from the brain before re-contextualizing (read-only). |

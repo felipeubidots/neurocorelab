@@ -9,8 +9,8 @@ Initial engine — agnostic, distributable, English (bilingual only at onboardin
 - **Neuron schema** (`docs/neuron-schema.md`) — the file-based knowledge primitive (the "API").
 - **Onboarding** — `/ncl-init` (bilingual EN/ES) configures the instance on install: identity,
   repos, accounts, connectors, from `config/*.template.md`.
-- **Skills** — `/ncl-accounts`, `/ncl-sync`, `/ncl-recall`, `/ncl-handoff`, `/ncl-decision`,
-  `/ncl-project`, `/ncl-doctor`.
+- **Skills** — `/ncl-flow`, `/ncl-accounts`, `/ncl-sync`, `/ncl-recall`, `/ncl-handoff`,
+  `/ncl-decision`, `/ncl-project`, `/ncl-doctor`.
 - **Brain-aware statusline** + PostToolUse workdir tracker (terminal-agnostic: truecolor → 256
   → none; shows brain · account · repo (branch)).
 - **Multi-account** — `docs/multi-account.md` + `bin/ncl-add-account.sh`, `bin/ncl-sync-accounts.sh`

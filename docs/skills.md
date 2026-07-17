@@ -6,6 +6,7 @@ your language (set during `/ncl-init`).
 | Skill | What it does |
 |---|---|
 | `/ncl-init` | **Onboarding.** Interviews you and configures your instance: identity, repos, accounts, connectors. Also wires the statusline + hooks. Run first. |
+| `/ncl-flow` | **Focus a session.** "Today we work on X" → loads everything the brain has on X, plans around what the active account can/can't do, and pre-wires handoffs for the rest. |
 | `/ncl-accounts` | **Multi-account.** Sets up 2+ Claude Code accounts on one machine — isolated credentials, shared context, no daily `/login`. See `multi-account.md`. |
 | `/ncl-sync` | **Consolidate.** Turns the session into long-term neurons (decisions, cortex updates), stamped by the active account. The brain's "sleep". |
 | `/ncl-recall` | **Recall.** Answers from the brain before you re-explain — searches the cortex/config/decisions/projects and cites the source. Read-only. |

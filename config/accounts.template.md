@@ -1,15 +1,17 @@
 ---
 name: accounts
 type: config
-description: AI accounts / workspaces I switch between and how each is detected. Optional.
+description: AI accounts / workspaces I switch between, how each is detected, and what each can/can't do. Optional.
 created: {{INIT_DATE}}
 ---
 
 # Accounts / Cuentas
 
-<!-- Optional. If you use more than one AI account/profile, list them and how each is
-     detected (e.g. an env var like CLAUDE_CONFIG_DIR). Delete this file if not needed. -->
+<!-- Optional. If you use more than one AI account/profile, list them, how each is detected
+     (e.g. CLAUDE_CONFIG_DIR), and its CAPABILITIES — what it can and can't do (publishing
+     artifacts, a login-only connector, a specific MCP). /ncl-flow uses the capabilities to
+     plan a session and hand off what the active account can't finish. Delete if not needed. -->
 
-| Account / Cuenta | Detected by / Se detecta por | Notes / Notas |
-|---|---|---|
-| {{ACCOUNT}} | {{DETECT}} | {{NOTES}} |
+| Account | Detected by | Can do / Can't do | Notes |
+|---|---|---|---|
+| {{ACCOUNT}} | {{DETECT}} | {{CAPABILITIES}} | {{NOTES}} |
