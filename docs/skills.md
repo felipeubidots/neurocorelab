@@ -10,6 +10,8 @@ your language (set during `/ncl-init`).
 | `/ncl-sync` | **Consolidate.** Turns the session into long-term neurons (decisions, cortex updates), stamped by the active account. The brain's "sleep". |
 | `/ncl-recall` | **Recall.** Answers from the brain before you re-explain — searches the cortex/config/decisions/projects and cites the source. Read-only. |
 | `/ncl-handoff` | **Bridge.** Queues a task for another account (or runs the ones queued for you). For work that needs a specific account's login/MCP. |
+| `/ncl-decision` | **Capture.** Records a decision/learning as a `decisions/` neuron (context → decision → why) and points to it from the cortex. |
+| `/ncl-project` | **Scaffold.** Sets up a project workspace under `projects/` — internal content or an external pointer to its own repo — and registers it. |
 
 ## The neural connection — how accounts "talk"
 NeuroCoreLab lets several Claude accounts on one machine share one brain and see each other's

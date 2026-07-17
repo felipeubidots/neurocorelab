@@ -52,6 +52,8 @@ connectors. On every later session, a hook reminds you if setup is still pending
 | `/ncl-sync` | Consolidate the session into the brain (decisions, cortex), stamped by account. |
 | `/ncl-recall` | Answer from the brain before re-contextualizing (read-only). |
 | `/ncl-handoff` | Cross-account bridge — queue/execute tasks between accounts. |
+| `/ncl-decision` | Capture a decision/learning as a neuron (context → decision → why). |
+| `/ncl-project` | Scaffold a project workspace (internal, or an external pointer to its own repo). |
 
 Full catalog and how accounts "talk" (the neural connection): **`docs/skills.md`**.
 
