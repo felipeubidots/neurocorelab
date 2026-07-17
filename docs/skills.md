@@ -12,6 +12,7 @@ your language (set during `/ncl-init`).
 | `/ncl-handoff` | **Bridge.** Queues a task for another account (or runs the ones queued for you). For work that needs a specific account's login/MCP. |
 | `/ncl-decision` | **Capture.** Records a decision/learning as a `decisions/` neuron (context → decision → why) and points to it from the cortex. |
 | `/ncl-project` | **Scaffold.** Sets up a project workspace under `projects/` — internal content or an external pointer to its own repo — and registers it. |
+| `/ncl-doctor` | **Audit.** Health-checks the instance (config, scripts, skills, project pointers, account sync, broken links, stale cortex) and offers fixes. |
 
 ## The neural connection — how accounts "talk"
 NeuroCoreLab lets several Claude accounts on one machine share one brain and see each other's

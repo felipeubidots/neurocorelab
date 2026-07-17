@@ -54,6 +54,7 @@ connectors. On every later session, a hook reminds you if setup is still pending
 | `/ncl-handoff` | Cross-account bridge — queue/execute tasks between accounts. |
 | `/ncl-decision` | Capture a decision/learning as a neuron (context → decision → why). |
 | `/ncl-project` | Scaffold a project workspace (internal, or an external pointer to its own repo). |
+| `/ncl-doctor` | Health-check the instance (config, scripts, pointers, account sync) and fix issues. |
 
 Full catalog and how accounts "talk" (the neural connection): **`docs/skills.md`**.
 
